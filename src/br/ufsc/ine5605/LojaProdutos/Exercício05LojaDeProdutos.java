@@ -3,25 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aula2;
-import java.util.ArrayList;
+package br.ufsc.ine5605.LojaProdutos;
 
 /**
  *
- * @author 12041789921
+ * @author gabriel.donadel
  */
-public class Aula2 {
+public class Exercício05LojaDeProdutos {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Losango losango = new Losango(53);
-        losango.desenhe();
-        Retangulo retangulo = new Retangulo(20,30);
-        
-        ArrayList<Armazenavel> armazenaveis = new ArrayList<>();
-        retangulo.desenhe();
+        // TODO code application logic here
     }
     
 }
