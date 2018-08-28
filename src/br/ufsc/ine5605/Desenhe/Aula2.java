@@ -17,7 +17,7 @@ public class Aula2 {
      */
     public static void main(String[] args) {
         Losango losango = new Losango(53);
-        losango.desenhe();
+        //losango.desenhe();
         Retangulo retangulo = new Retangulo(20,30);
         
         ArrayList<Armazenavel> armazenaveis = new ArrayList<>();

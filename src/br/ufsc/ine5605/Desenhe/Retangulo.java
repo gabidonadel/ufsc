@@ -42,7 +42,7 @@ public class Retangulo extends Figura implements Armazenavel{
         linha="";
         linha+=simbulo;
         for(int i=1;i<=largura-2;i++){
-            linha+="    ";
+            linha+="█";
         }
         linha+=simbulo;
         for(int i=2;i<altura;i++){
@@ -54,7 +54,7 @@ public class Retangulo extends Figura implements Armazenavel{
     }
     public String primeiraLinha(String simbulo,String linha){
         for(int i=1;i<=largura;i++){
-            linha+=simbulo+"  ";
+            linha+=simbulo;
         }
         return linha;
     } 
