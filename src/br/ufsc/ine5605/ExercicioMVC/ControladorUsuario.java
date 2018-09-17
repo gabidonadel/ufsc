@@ -5,6 +5,8 @@
  */
 package br.ufsc.ine5605.ExercicioMVC;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author 12041789921
@@ -13,24 +15,40 @@ public class ControladorUsuario {
 
     private ControladorPrincipal controladorPrin;
     private TelaUsuario telaUsuario;
+    private ArrayList<Usuario> usuarios;
     
     public ControladorUsuario(ControladorPrincipal controladorPrin) {
         this.controladorPrin = controladorPrin;
         this.telaUsuario = new TelaUsuario(this);
+        this.usuarios = new ArrayList<>();
     }
 
-    void mostraMenuUsuario() {
+    public void mostraMenuUsuario() {
         telaUsuario.mostraMenuUsuario();
     }
 
-    void mostraListaUsuarios() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void listaUsuarios() {
+        ArrayList<ConteudoTelaUsuario> listagemUsuarios = new ArrayList<>();
+        
+        for(Usuario usuario : usuarios){
+            listagemUsuarios.add(empacota(usuario));
+        }
+        
+        telaUsuario.mostraListaUsuarios(listagemUsuarios);
     }
 
+    public void incluiUsuario(ConteudoTelaUsuario conteudoTela) {
+        Usuario usuario = desempacota(conteudoTela);
+        usuarios.add(usuario);
+    }
+
+    private Usuario desempacota(ConteudoTelaUsuario conteudoTela) {
+        return new Usuario(conteudoTela.nomeUsuario);
+    }
+
+    private ConteudoTelaUsuario empacota(Usuario usuario) {
+        return new ConteudoTelaUsuario(usuario.getNome());
     
-    
-    
-    
-    
+    }
     
 }

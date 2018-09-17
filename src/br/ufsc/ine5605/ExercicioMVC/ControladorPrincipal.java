@@ -28,7 +28,7 @@ public class ControladorPrincipal {
         switch(opcao){
             case 1: controladorUsuario.mostraMenuUsuario();
                 break;
-            case 2: controladorUsuario.mostraListaUsuarios();
+            case 2: System.out.println("merdaaaaaa");
                 break;
         }
     }
