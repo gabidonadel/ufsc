@@ -37,6 +37,7 @@ public class ControladorUsuario {
         telaUsuario.mostraListaUsuarios(listagemUsuarios);
     }
 
+    
     public void incluiUsuario(ConteudoTelaUsuario conteudoTela) {
         Usuario usuario = desempacota(conteudoTela);
         usuarios.add(usuario);

@@ -22,14 +22,15 @@ class TelaPrincipal {
     }
     
     public void mostraMenuPrincipal(){
-        
-        System.out.println("--- Sistema Usuarios ---");
-        System.out.println("--- Digite a opção desejada ---");
-        System.out.println("[1] - Cadastro de Usuario");
-        System.out.println("[2] - Listar Usuarios");
-        int opcao = s.nextInt();
-        
-        controladorPrin.executaOpcaoMunuPrincipal(opcao);
+        int opcao;
+        do{
+            System.out.println("--- Sistema Usuarios ---");
+            System.out.println("--- Digite a opção desejada ---");
+            System.out.println("[1] - Cadastro de Usuario");
+            System.out.println("[0] - Sair");
+            opcao = s.nextInt();
+            controladorPrin.executaOpcaoMunuPrincipal(opcao);
+        }while(opcao!=0);
         
     }
     
