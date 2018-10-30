@@ -58,12 +58,15 @@ public class ControladorJogoDaVelha {
             }
         }
         int countDiagonalPrincipal = 0;
+        int countDiagonalSecundaria = 0;
         for(int i = 0;i<3; i++){
             countDiagonalPrincipal += jogadas[i][i];
+            countDiagonalSecundaria += jogadas[2-i][i];
         }
-        if(countDiagonalPrincipal ==0 || countDiagonalPrincipal == 3){
+        if(countDiagonalPrincipal ==0 || countDiagonalPrincipal == 3 || countDiagonalSecundaria ==0 || countDiagonalSecundaria == 3){
                 return true;
         }
+
         return false;
     }
     public void limpaJogo(){
