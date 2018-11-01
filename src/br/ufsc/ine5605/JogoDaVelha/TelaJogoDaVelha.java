@@ -44,6 +44,7 @@ public class TelaJogoDaVelha extends JFrame{
     
     private void configuraTela(){
         
+        getContentPane().removeAll();
         Container container =  getContentPane();
         container.setLayout(new GridBagLayout());
         GridBagConstraints constrains = new GridBagConstraints();
@@ -136,19 +137,33 @@ public class TelaJogoDaVelha extends JFrame{
         @Override
         public void actionPerformed(ActionEvent ae){
             JButton botao = (JButton) ae.getSource();
-            botao.setText(controladorJogoDaVelha.jogar());
+            
             String pos = botao.getName();
 
             int x = Integer.valueOf(pos.substring(0, 1))-1;
             int y = Integer.valueOf(pos.substring(2))-1;
             System.out.println("X: "+ x+" Y: "+ y);
-            controladorJogoDaVelha.setJogadas(x, y);
-            
-            if(controladorJogoDaVelha.verificaVitoria()){
-                JOptionPane.showMessageDialog(null, "Ganhou!");
-                controladorJogoDaVelha.limpaJogo();
-                //configuraTela();
+            try{
+                //controladorJogoDaVelha.setJogadas(x, y);
+                String j = controladorJogoDaVelha.jogar(x,y);
+                botao.setText(j);
+                try{
+                    if(controladorJogoDaVelha.verificaVitoria()){
+                        JOptionPane.showMessageDialog(null, "Parabens Jogardor "+j+" você ganhou!");
+                        controladorJogoDaVelha.limpaJogo();
+                        configuraTela();
+                    }
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null, e.getMessage());
+                    controladorJogoDaVelha.limpaJogo();
+                    configuraTela();
+                }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, e.getMessage());
+                
             }
+            
+            
         }
     } 
     
