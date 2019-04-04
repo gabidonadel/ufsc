@@ -18,13 +18,20 @@ public class Aula5 {
         Pessoa a = new Pessoa("Lígia");
         Pessoa b = new Pessoa("Doni");
         Pessoa c = new Pessoa("Zé");
+        Pessoa d = new Pessoa("LG");
+        Pessoa e = new Pessoa("Rapha");
         try{
-        ListaPessoas lista = new ListaPessoas(a);
-        lista.adicionarAposPessoa(b, a);
-        lista.adicionaEmUltimo(c);
-        lista.imprimeLista();
-        }catch(Exception e){
-            System.out.println(e);
+            ListaPessoas lista = new ListaPessoas(a);
+            lista.adicionarAposPessoa(b, a);
+            lista.adicionaEmUltimo(c);
+            lista.adicionaEmPrimeiro(d);
+            lista.adicionar(e, 2);
+            lista.excluiUltimo();
+            lista.excluir(b);
+            lista.excluir(2);
+            lista.imprimeLista();
+        }catch(Exception ex){
+            System.out.println(ex);
         
         }
 

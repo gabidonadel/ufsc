@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.ufsc.ine5609.Lista;
 
 /**
@@ -64,9 +59,18 @@ public class ListaPessoas {
     public void excluiPrimeiro(){
         this.i = i.getNext();
     }
+    
+    public void excluiUltimo(){
+        Item atual = this.i;
+        Item anterior = atual;
+        while(atual.getNext() != null){
+            anterior = atual;
+            atual = atual.getNext();
+        }
+        anterior.setNext(null);
+    }
 
     public void excluir(Pessoa p){
-        Item item = new Item(p);
         Item atual = this.i;
         Item anterior = atual;
         while( (Pessoa)atual.getObj() != p){
@@ -74,6 +78,19 @@ public class ListaPessoas {
             atual = atual.getNext();
         }
         anterior.setNext(atual.getNext());
+    }
+    
+    public void excluir(int pos){
+        Item anterior = this.i;
+        Item atual = anterior.getNext();
+        int count = 1;
+        while(count!= pos-1){
+            anterior = atual;
+            atual = atual.getNext();
+            count++;
+        }
+        anterior.setNext(atual.getNext());
+        
     }
     
     public void imprimeLista(){
