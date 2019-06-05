@@ -29,10 +29,8 @@ public class Prova1 {
         System.out.println("### NÚMERO 3 INSERIDO NO FIM ###");
         
         try{
-            //Print dequeImplementadoNaProva
-            /*System.out.println(dequeImplementadoNaProva.sairDaFrente());
-            System.out.println(dequeImplementadoNaProva.sairDaFrente());
-            System.out.println(dequeImplementadoNaProva.sairDaFrente());*/
+            System.out.println("### VERIFICA SE A FILA ESTA CHEIA ###");
+            System.out.println(dequeImplementadoNaProva.filaCheia());
             
             System.out.println("### REMOVENDO NÚMERO PELA FRENTE ###");
             System.out.println(dequeImplementadoNaProva.sairDaFrente());
@@ -42,9 +40,12 @@ public class Prova1 {
             System.out.println(dequeImplementadoNaProva.sairDoFim());
             System.out.println("### REMOVENDO NÚMERO PELO FIM ###");
             System.out.println(dequeImplementadoNaProva.sairDoFim());
+            
         }catch(Exception ex){
             System.out.println(ex);
         }
+        System.out.println("### VERIFICA SE A FILA ESTA VAZIA ###");
+        System.out.println(dequeImplementadoNaProva.filaVazia());
     }
     
 }
